@@ -4,6 +4,7 @@ let totalPages = 1;
 async function searchRepos(page = 1) {
     const searchInput = document.getElementById('searchInput').value;
     const languageFilter = document.getElementById('languageFilter').value;
+    const sortFilter = document.getElementById('sortFilter').value;
     const resultsDiv = document.getElementById('results');
     const loadingDiv = document.getElementById('loading');
     const paginationDiv = document.getElementById('pagination');
@@ -12,7 +13,7 @@ async function searchRepos(page = 1) {
     paginationDiv.innerHTML = ''; // Clear previous pagination
     loadingDiv.style.display = 'block'; // Show loading spinner
 
-    const query = `https://api.github.com/search/repositories?q=${searchInput}+language:${languageFilter}&sort=stars&order=desc&page=${page}&per_page=10`;
+    const query = `https://api.github.com/search/repositories?q=${searchInput}+language:${languageFilter}&sort=${sortFilter}&order=desc&page=${page}&per_page=10`;
 
     try {
         const response = await fetch(query);
@@ -23,7 +24,7 @@ async function searchRepos(page = 1) {
         if (data.items && data.items.length > 0) {
             data.items.forEach(repo => {
                 const repoDiv = document.createElement('div');
-                repoDiv.className = 'repo';
+                repoDiv.className = 'repo col-md-6';
 
                 const repoName = document.createElement('h2');
                 repoName.textContent = repo.name;
