@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.repo {
+    background-color: white;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.repo h2 {
+    margin: 0;
+}
+
+.repo p {
+    margin: 5px 0;
+}
+
+.pagination-btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    color: #007bff;
+    background-color: white;
+    text-decoration: none;
+}
+
+.pagination-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
