@@ -9,8 +9,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center my-4">GitHub Repo Explorer</h1>
+      <div class="container my-5">
+        <h1 class="text-center mb-4">GitHub Repo Explorer</h1>
         <div class="search-bar mb-4">
             <div class="input-group">
                 <input type="text" id="searchInput" class="form-control" placeholder="Search for repositories...">
@@ -22,6 +22,11 @@
                     <option value="ruby">Ruby</option>
                     <!-- Add more languages as needed -->
                 </select>
+                <select id="sortFilter" class="custom-select">
+                    <option value="stars">Stars</option>
+                    <option value="forks">Forks</option>
+                    <option value="updated">Recently Updated</option>
+                </select>
                 <div class="input-group-append">
                     <button class="btn btn-success" onclick="searchRepos()">Search</button>
                 </div>
@@ -32,9 +37,9 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <div id="results"></div>
+        <div id="results" class="row"></div>
         <div id="pagination" class="text-center my-4"></div>
-    </div>
+      </div>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
